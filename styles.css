@@ -254,8 +254,8 @@ main {
 }
 
 .hero-photo {
-  width: 115px;
-  height: 115px;
+  width: 132px;
+  height: 132px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
@@ -294,6 +294,17 @@ main {
 
 @media (hover: none) {
   .hero-photo-caption { display: none; }
+}
+
+@keyframes textPulse {
+  0%   { transform: scale(1); opacity: 1; }
+  35%  { transform: scale(1.015); opacity: 0.78; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.hero-photo-wrap:hover + .hero-text .hero-label,
+.hero-photo-wrap:hover + .hero-text h1 {
+  animation: textPulse 0.55s ease-out forwards;
 }
 
 .hero-text {
@@ -636,6 +647,43 @@ main {
   top: 0.15em;
 }
 
+/* ===== ASSIGNMENT CARDS ===== */
+.assignment-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+@media (max-width: 580px) {
+  .assignment-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.assignment-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+}
+
+.assignment-card h4 {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-xs);
+}
+
+.assignment-card p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
 /* ===== EXPERIENCE ===== */
 .experience-list {
   display: flex;
@@ -744,6 +792,17 @@ main {
   font-size: 0.975rem;
   color: var(--color-text-muted);
   line-height: 1.72;
+}
+
+.exploration-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.exploration-card.card-tinted {
+  background: var(--color-accent-light);
 }
 
 .placeholder-note {
