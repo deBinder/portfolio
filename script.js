@@ -73,8 +73,22 @@ function initMobileNav() {
   });
 }
 
+// Click-to-expand assignment cards
+function initExpandableCards() {
+  document.querySelectorAll('.assignment-card').forEach(card => {
+    const header = card.querySelector('.assignment-header');
+    if (!header) return;
+
+    header.addEventListener('click', () => {
+      const isExpanded = card.classList.toggle('is-expanded');
+      header.setAttribute('aria-expanded', String(isExpanded));
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setActiveNav();
   initScrollReveal();
   initMobileNav();
+  initExpandableCards();
 });
