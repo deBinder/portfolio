@@ -73,43 +73,16 @@ function initMobileNav() {
   });
 }
 
-// Document modal for assignment cards
-function initDocumentModals() {
-  const modal = document.getElementById('doc-modal');
-  if (!modal) return;
+// Click-to-expand assignment cards
+function initExpandableCards() {
+  document.querySelectorAll('.assignment-card').forEach(card => {
+    const header = card.querySelector('.assignment-header');
+    if (!header) return;
 
-  const frame = document.getElementById('doc-modal-frame');
-  const titleEl = modal.querySelector('.doc-modal-title');
-  const closeBtn = modal.querySelector('.doc-modal-close');
-
-  // Open modal on card click
-  document.querySelectorAll('.assignment-card[data-pdf]').forEach(card => {
-    card.addEventListener('click', () => {
-      frame.src = card.dataset.pdf;
-      if (titleEl) titleEl.textContent = card.dataset.title || '';
-      modal.showModal();
+    header.addEventListener('click', () => {
+      const isExpanded = card.classList.toggle('is-expanded');
+      header.setAttribute('aria-expanded', String(isExpanded));
     });
-  });
-
-  // Close on × button
-  closeBtn.addEventListener('click', () => {
-    modal.close();
-  });
-
-  // Close on backdrop click (click outside the dialog box)
-  modal.addEventListener('click', e => {
-    const rect = modal.getBoundingClientRect();
-    if (
-      e.clientX < rect.left || e.clientX > rect.right ||
-      e.clientY < rect.top  || e.clientY > rect.bottom
-    ) {
-      modal.close();
-    }
-  });
-
-  // Clear iframe src on close (handles Escape key too)
-  modal.addEventListener('close', () => {
-    frame.src = '';
   });
 }
 
@@ -117,5 +90,5 @@ document.addEventListener('DOMContentLoaded', () => {
   setActiveNav();
   initScrollReveal();
   initMobileNav();
-  initDocumentModals();
+  initExpandableCards();
 });
