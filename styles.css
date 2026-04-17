@@ -661,7 +661,6 @@ main {
 .assignment-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: start;
   gap: var(--space-md);
   margin-top: var(--space-lg);
 }
@@ -691,6 +690,7 @@ main {
 .assignment-card.is-expanded {
   transform: none;
   box-shadow: var(--shadow-md);
+  align-self: start;
 }
 
 .assignment-card-inner {
