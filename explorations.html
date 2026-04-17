@@ -41,31 +41,59 @@
 
         <div class="exploration-list">
 
-          <div class="exploration-card card-tinted reveal">
-            <span class="exploration-status">
-              <span class="status-dot"></span>
-              Current interest
-            </span>
-            <h3>Animal-Computer Interaction</h3>
-            <p class="card-body">I came across ACI not that long ago and it stuck with me. The design problem is genuinely interesting: how do you make technology for users who experience the world completely differently from you, and who can't give you feedback the way a human user can? That's a hard constraint to design around. I'm early in this — reading, thinking. Not much more than that yet.</p>
+          <div class="exploration-card card-tinted is-expandable reveal">
+            <div class="exploration-card-inner">
+              <span class="exploration-status">
+                <span class="status-dot"></span>
+                Current interest
+              </span>
+              <h3>Animal-Computer Interaction</h3>
+              <p class="card-body">I came across ACI not that long ago and it stuck with me. The design problem is genuinely interesting: how do you make technology for users who experience the world completely differently from you, and who can't give you feedback the way a human user can? That's a hard constraint to design around. I'm early in this — reading, thinking. Not much more than that yet.</p>
+            </div>
+            <button class="exploration-toggle" aria-expanded="false">
+              More
+              <span class="exploration-chevron" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </button>
+            <div class="exploration-body">
+              <div class="exploration-body-inner">
+                <div class="exploration-body-content">
+                  <p>One thing I keep coming back to is the question of data and consent. If a system is collecting behavioural signals from an animal — what it does, how it moves, what it responds to — who does that data belong to? What would it even mean to design a system that took the animal's interests seriously at that level, rather than just using the data for human ends?</p>
+                  <p>I started mapping this out. The flowchart below is an early attempt to think through how data collected about a cat might flow, who controls it, and where the ethical questions actually sit. It's rough — more a way of making the problem visible than a finished argument.</p>
+                  <img
+                    src="CatPrivacyFlowchart.png"
+                    alt="Flowchart mapping data flows and privacy considerations for cat-related technology"
+                    class="exploration-figure"
+                    title="Click to enlarge — then click again to zoom in">
+                  <p class="exploration-figure-caption">Early sketch — data flows and privacy considerations in cat-facing technology</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="exploration-card reveal" style="transition-delay: 0.1s">
-            <span class="exploration-status">
-              <span class="status-dot" style="background: var(--color-text-muted); animation: none;"></span>
-              Coming soon
-            </span>
-            <h3>Placeholder</h3>
-            <p class="card-body">Details to follow once the idea has enough shape to be worth putting here.</p>
+            <div class="exploration-card-inner">
+              <span class="exploration-status">
+                <span class="status-dot" style="background: var(--color-text-muted); animation: none;"></span>
+                Coming soon
+              </span>
+              <h3>Placeholder</h3>
+              <p class="card-body">Details to follow once the idea has enough shape to be worth putting here.</p>
+            </div>
           </div>
 
           <div class="exploration-card reveal" style="transition-delay: 0.15s">
-            <span class="exploration-status">
-              <span class="status-dot" style="background: var(--color-text-muted); animation: none;"></span>
-              Coming soon
-            </span>
-            <h3>Placeholder</h3>
-            <p class="card-body">Details to follow once the idea has enough shape to be worth putting here.</p>
+            <div class="exploration-card-inner">
+              <span class="exploration-status">
+                <span class="status-dot" style="background: var(--color-text-muted); animation: none;"></span>
+                Coming soon
+              </span>
+              <h3>Placeholder</h3>
+              <p class="card-body">Details to follow once the idea has enough shape to be worth putting here.</p>
+            </div>
           </div>
 
         </div>
@@ -90,6 +118,18 @@
       </ul>
     </div>
   </footer>
+
+  <!-- Image lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="lightbox-img-wrap">
+      <img src="" alt="">
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

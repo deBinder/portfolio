@@ -73,16 +73,62 @@ function initMobileNav() {
   });
 }
 
-// Click-to-expand assignment cards
+// Click-to-expand cards (assignment and exploration)
 function initExpandableCards() {
-  document.querySelectorAll('.assignment-card').forEach(card => {
-    const header = card.querySelector('.assignment-header');
-    if (!header) return;
+  document.querySelectorAll('.assignment-card, .exploration-card').forEach(card => {
+    const toggle = card.querySelector('.assignment-toggle, .exploration-toggle');
+    if (!toggle) return;
 
-    header.addEventListener('click', () => {
+    toggle.addEventListener('click', () => {
       const isExpanded = card.classList.toggle('is-expanded');
-      header.setAttribute('aria-expanded', String(isExpanded));
+      toggle.setAttribute('aria-expanded', String(isExpanded));
     });
+  });
+}
+
+// Image lightbox with zoom
+function initLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
+
+  const imgWrap = lightbox.querySelector('.lightbox-img-wrap');
+  const lightboxImg = imgWrap.querySelector('img');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    imgWrap.classList.remove('is-zoomed');
+    document.body.style.overflow = '';
+    // Clear src after transition so image doesn't flash on reopen
+    setTimeout(() => { lightboxImg.src = ''; }, 300);
+  }
+
+  // Open on any .exploration-figure click
+  document.querySelectorAll('.exploration-figure').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  });
+
+  // Toggle zoom on image click
+  imgWrap.addEventListener('click', () => {
+    imgWrap.classList.toggle('is-zoomed');
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  // Click on dark backdrop (not the image) closes
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
   });
 }
 
@@ -91,4 +137,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initMobileNav();
   initExpandableCards();
+  initLightbox();
 });
