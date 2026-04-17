@@ -1138,6 +1138,20 @@ main {
   height: 18px;
 }
 
+.lightbox-hint {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.38);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
 .lightbox-img-wrap {
   max-width: 92vw;
   max-height: 90vh;
@@ -1161,14 +1175,14 @@ main {
   transition: max-width 0.25s ease, max-height 0.25s ease;
 }
 
-/* Zoom level 1 — moderate (1.6× base) */
+/* Zoom level 1 — moderate */
 .lightbox-img-wrap.zoom-1 {
   cursor: zoom-in;
 }
 
 .lightbox-img-wrap.zoom-1 img {
-  max-width: 128vw;
-  max-height: 128vh;
+  max-width: 165vw;
+  max-height: 165vh;
 }
 
 /* Zoom level 2 — full native resolution */
