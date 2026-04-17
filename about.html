@@ -51,10 +51,10 @@
         </div>
         <div class="image-grid">
           <div class="image-grid-cell">
-            <img src="Sisu.jpeg" alt="Sisu">
+            <img src="Sisu.jpeg" alt="Sisu" class="lightbox-trigger">
           </div>
           <div class="image-grid-cell">
-            <img src="Sisu2.jpeg" alt="Yuumi">
+            <img src="Sisu2.jpeg" alt="Yuumi" class="lightbox-trigger">
           </div>
         </div>
       </section>
@@ -100,6 +100,18 @@
       </ul>
     </div>
   </footer>
+
+  <!-- Image lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="lightbox-img-wrap">
+      <img src="" alt="">
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

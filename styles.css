@@ -538,19 +538,12 @@ main {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
-  transform: scale(1);
-  transition: transform 1.5s ease-out;
+  cursor: zoom-in;
+  transition: opacity 0.2s ease;
 }
 
-.image-grid-cell:hover img {
-  transform: scale(1.28);
-  transition: transform 0.3s ease-out;
-}
-
-@media (hover: none) {
-  .image-grid-cell:hover img {
-    transform: none;
-  }
+.image-grid img:hover {
+  opacity: 0.88;
 }
 
 .image-placeholder {
@@ -667,18 +660,12 @@ main {
 /* ===== ASSIGNMENT CARDS ===== */
 .assignment-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-md);
   margin-top: var(--space-lg);
 }
 
-@media (max-width: 860px) {
-  .assignment-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 540px) {
+@media (max-width: 600px) {
   .assignment-row {
     grid-template-columns: 1fr;
   }
@@ -687,26 +674,26 @@ main {
 .assignment-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
   border-radius: var(--radius-md);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
 }
 
 .assignment-card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
-  border-color: var(--color-accent);
 }
 
 .assignment-card.is-expanded {
-  border-color: var(--color-accent);
   transform: none;
+  box-shadow: var(--shadow-md);
 }
 
 .assignment-card-inner {
-  padding: var(--space-md);
+  padding: var(--space-lg);
   flex: 1;
 }
 
@@ -765,7 +752,7 @@ main {
   background: none;
   border: none;
   border-top: 1px solid var(--color-border);
-  padding: 0.65rem var(--space-md);
+  padding: 0.7rem var(--space-lg);
   cursor: pointer;
   font-family: var(--font-body);
   font-size: 0.78rem;
@@ -823,7 +810,7 @@ main {
 }
 
 .assignment-body-content {
-  padding: var(--space-sm) var(--space-md) var(--space-md);
+  padding: var(--space-sm) var(--space-lg) var(--space-lg);
   border-top: 1px solid var(--color-border);
 }
 
@@ -1165,15 +1152,30 @@ main {
 
 .lightbox-img-wrap img {
   display: block;
-  max-width: 88vw;
-  max-height: 86vh;
+  max-width: 80vw;
+  max-height: 80vh;
   object-fit: contain;
   border-radius: var(--radius-sm);
-  transition: max-width 0.3s ease, max-height 0.3s ease;
   user-select: none;
+  transition: max-width 0.25s ease, max-height 0.25s ease;
 }
 
-.lightbox-img-wrap.is-zoomed img {
+/* Zoom level 1 — moderate (1.6× base) */
+.lightbox-img-wrap.zoom-1 {
+  cursor: zoom-in;
+}
+
+.lightbox-img-wrap.zoom-1 img {
+  max-width: 128vw;
+  max-height: 128vh;
+}
+
+/* Zoom level 2 — full native resolution */
+.lightbox-img-wrap.zoom-2 {
+  cursor: zoom-out;
+}
+
+.lightbox-img-wrap.zoom-2 img {
   max-width: none;
   max-height: none;
   width: auto;

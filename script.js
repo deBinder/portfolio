@@ -86,7 +86,7 @@ function initExpandableCards() {
   });
 }
 
-// Image lightbox with zoom
+// Image lightbox with 3-level zoom
 function initLightbox() {
   const lightbox = document.getElementById('lightbox');
   if (!lightbox) return;
@@ -94,35 +94,49 @@ function initLightbox() {
   const imgWrap = lightbox.querySelector('.lightbox-img-wrap');
   const lightboxImg = imgWrap.querySelector('img');
   const closeBtn = lightbox.querySelector('.lightbox-close');
+  let zoomLevel = 0;
+
+  function setZoom(level) {
+    zoomLevel = level;
+    imgWrap.classList.remove('zoom-1', 'zoom-2');
+    if (level > 0) imgWrap.classList.add(`zoom-${level}`);
+  }
 
   function openLightbox(src, alt) {
     lightboxImg.src = src;
     lightboxImg.alt = alt || '';
+    setZoom(0);
     lightbox.classList.add('is-open');
     document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
     lightbox.classList.remove('is-open');
-    imgWrap.classList.remove('is-zoomed');
+    setZoom(0);
     document.body.style.overflow = '';
-    // Clear src after transition so image doesn't flash on reopen
     setTimeout(() => { lightboxImg.src = ''; }, 300);
   }
 
-  // Open on any .exploration-figure click
-  document.querySelectorAll('.exploration-figure').forEach(img => {
+  // Open on any .lightbox-trigger click
+  document.querySelectorAll('.lightbox-trigger').forEach(img => {
     img.addEventListener('click', () => openLightbox(img.src, img.alt));
   });
 
-  // Toggle zoom on image click
+  // Left-click: zoom in (up to level 2)
   imgWrap.addEventListener('click', () => {
-    imgWrap.classList.toggle('is-zoomed');
+    if (zoomLevel < 2) setZoom(zoomLevel + 1);
+  });
+
+  // Right-click: zoom out one level
+  imgWrap.addEventListener('contextmenu', e => {
+    if (zoomLevel > 0) {
+      e.preventDefault();
+      setZoom(zoomLevel - 1);
+    }
   });
 
   closeBtn.addEventListener('click', closeLightbox);
 
-  // Click on dark backdrop (not the image) closes
   lightbox.addEventListener('click', e => {
     if (e.target === lightbox) closeLightbox();
   });
