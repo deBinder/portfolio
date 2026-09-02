@@ -1161,16 +1161,46 @@ main {
   font-weight: 600;
 }
 
-.exploration-coming-soon {
+.exploration-image-placeholders {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-sm);
+}
+
+.exploration-image-placeholder {
+  aspect-ratio: 4 / 3;
   padding: var(--space-md);
   border: 1px dashed var(--color-border);
   border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-.exploration-coming-soon p {
+.exploration-image-placeholder span,
+.exploration-image-placeholder p {
   color: var(--color-text-muted);
+}
+
+.exploration-image-placeholder span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.exploration-image-placeholder p {
+  margin: 0.35rem 0 0;
   font-style: italic;
+}
+
+@media (max-width: 520px) {
+  .exploration-image-placeholders {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== LIGHTBOX ===== */
