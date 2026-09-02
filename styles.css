@@ -548,6 +548,10 @@ main {
   transition: transform 0.3s ease-out;
 }
 
+.customer-journey-gallery .image-grid-cell:hover img {
+  transform: none;
+}
+
 @media (hover: none) {
   .image-grid-cell:hover img {
     transform: none;
@@ -693,6 +697,10 @@ main {
   transition: box-shadow var(--transition-base), transform var(--transition-base);
 }
 
+.cykelgarage-card {
+  order: -1;
+}
+
 .assignment-card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
@@ -753,6 +761,21 @@ main {
 .assignment-pdf-link:hover {
   color: var(--color-accent-dark);
   gap: 0.5rem;
+}
+
+.assignment-figma-link {
+  background: var(--color-accent);
+  color: #fff;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.8rem;
+  margin-bottom: var(--space-md);
+}
+
+.assignment-figma-link:hover {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: #fff;
 }
 
 .assignment-preview {
