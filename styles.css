@@ -404,6 +404,29 @@ main {
   margin-bottom: var(--space-sm);
 }
 
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 0 var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topic-tags .tag {
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.topic-tags .tag:hover {
+  background: var(--color-accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.anchor-target {
+  scroll-margin-top: calc(var(--nav-height) + var(--space-sm));
+}
+
 /* ===== SCROLL REVEAL ===== */
 .reveal {
   opacity: 0;
