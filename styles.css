@@ -1221,6 +1221,27 @@ main {
   text-align: center;
 }
 
+.exploration-image-placeholder-featured {
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  overflow: hidden;
+}
+
+.exploration-image-placeholder-featured img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.exploration-image-placeholder > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
 .exploration-image-placeholder span,
 .exploration-image-placeholder p {
   color: var(--color-text-muted);
