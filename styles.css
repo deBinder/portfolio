@@ -629,6 +629,8 @@ main {
 }
 
 .thesis-card {
+  width: 100%;
+  box-sizing: border-box;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-top: 4px solid var(--color-accent);
@@ -689,6 +691,93 @@ main {
   margin-bottom: var(--space-sm);
 }
 
+#masters-thesis .thesis-description > .thesis-highlights-label,
+#bachelors-thesis .thesis-description > .thesis-highlights-label {
+  margin-top: var(--space-md);
+  margin-bottom: 0.45rem;
+  padding-left: 0.7rem;
+  border-left: 2px solid var(--color-accent);
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+}
+
+#masters-thesis .thesis-description > .thesis-highlights-label:first-child,
+#bachelors-thesis .thesis-description > .thesis-highlights-label:first-child {
+  margin-top: 0;
+}
+
+#masters-thesis .thesis-highlights-label,
+#bachelors-thesis .thesis-highlights-label {
+  margin-bottom: 0.55rem;
+  padding-left: 0.7rem;
+  border-left: 2px solid var(--color-accent);
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+}
+
+#bachelors-thesis .exploration-figure {
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+#bachelors-thesis .exploration-figure-caption {
+  margin-bottom: var(--space-sm);
+}
+
+.thesis-section {
+  margin-top: var(--space-md);
+}
+
+.thesis-section:first-child {
+  margin-top: 0;
+}
+
+.thesis-card-expander {
+  margin-top: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.thesis-card-expander > summary {
+  cursor: pointer;
+  list-style: none;
+  color: var(--color-accent-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.thesis-card-expander > summary::-webkit-details-marker {
+  display: none;
+}
+
+.thesis-card-expander > summary::after {
+  content: '+';
+  float: right;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.thesis-card-expander[open] > summary::after {
+  content: '\2212';
+}
+
+.thesis-expanded-content {
+  padding-top: var(--space-xs);
+}
+
 .thesis-highlights {
   margin-top: var(--space-md);
   padding-top: var(--space-md);
@@ -733,13 +822,19 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  width: 100%;
+  max-width: var(--max-width);
+  margin-right: auto;
+  margin-left: auto;
   margin-top: var(--space-lg);
 }
 
 .assignment-card {
+  width: 100%;
+  box-sizing: border-box;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-accent);
+  border-top: 4px solid var(--color-accent);
   border-radius: var(--radius-md);
   overflow: hidden;
   display: flex;

@@ -50,19 +50,53 @@
           <h3>Tailored Immersion: Adaptive Virtual Reality as a Tool for Personalized PTSD Treatment</h3>
           <p class="thesis-institution">Uppsala University &mdash; MSSc Human-Computer Interaction (Filosofie masterexamen) &mdash; 2024</p>
           <div class="thesis-description">
-            <p>VR exposure therapy for PTSD is well-established, but most implementations run the same sequence for everyone. This thesis looks at what a more personalised approach might look like, and what the design constraints would be.</p>
-            <p>The work combines a literature review with semi-structured interviews — one clinician specialising in trauma, two individuals with PTSD — and uses those findings to inform a proof-of-concept prototype. The prototype shows how traumatic elements could be introduced gradually, how the therapist could adjust the environment during a session, and what a clinician-facing interface might need to support that. A second psychiatrist reviewed the prototype and the design concepts behind it.</p>
-            <p>The result is a design direction rather than a tested intervention — user testing was out of scope — but it maps what adaptive VR for PTSD would need to account for, and where the tension between automation and therapist agency sits.</p>
-          </div>
-          <div class="thesis-highlights">
-            <p class="thesis-highlights-label">What the thesis did</p>
-            <ul class="highlights-list">
-              <li>Thematic analysis across expert and lived-experience interviews</li>
-              <li>Prototype demonstrating gradual, therapist-adjustable exposure</li>
-              <li>Therapist-facing interface concept for in-session control</li>
-              <li>Design considerations for clinically-grounded adaptive VR</li>
-              <li>Analysis of the tension between automation and therapist agency</li>
-            </ul>
+            <div class="thesis-section">
+              <p class="thesis-highlights-label">The Problem</p>
+              <p>Traditional treatments for PTSD can lack efficacy due to patients' poor emotional engagement and reliance on avoidance as a coping strategy. Additionally, recreating trauma-related scenarios effectively and safely in real-world clinical contexts is highly difficult. Therapists need highly controlled, adaptable environments to deliver safe, effective, personalized exposure therapy.</p>
+            </div>
+            <details class="thesis-card-expander">
+              <summary>Read the full thesis</summary>
+              <div class="thesis-expanded-content">
+              <div class="thesis-section">
+              <p class="thesis-highlights-label">My Role &amp; Approach</p>
+              <p>I explored the role of user experience and technology design in developing therapeutic VR tools. My approach included:</p>
+              <ul class="highlights-list">
+                <li>Conducting a thematic analysis of 20 peer-reviewed articles and semi-structured interviews with a trauma clinician and two individuals with PTSD.</li>
+                <li>Translating these qualitative findings into concrete design elements.</li>
+                <li>Developing a functional proof-of-concept VR prototype with two distinct environments (an interpersonal/assault-related scenario and a city combat scenario).</li>
+                <li>Evaluating the prototype's therapeutic logic and design with a specialized trauma psychiatrist.</li>
+              </ul>
+            </div>
+            <div class="thesis-section">
+              <p class="thesis-highlights-label">Key Findings &amp; Prototype Functionality</p>
+              <p>The research highlighted that VR therapy must prioritize real-time adaptability and multi-sensory stimuli to succeed. The resulting prototype implemented the following features:</p>
+              <ul class="highlights-list">
+                <li><strong>Therapist Interface:</strong> A therapist-facing hand-menu allows real-time manipulation of the environment. The clinician can alter the time of day, mute audio, or trigger effects like smoke without removing themselves from the virtual space.</li>
+                <li><strong>Gradual Exposure:</strong> The system supports a tiered introduction of stimuli to match patient resilience. For example, therapists can swap low-detail, symbolic military vehicles for highly realistic ones as the patient becomes ready.</li>
+                <li><strong>Safety Mechanisms:</strong> To mitigate patient avoidance while ensuring safety, the therapist controls a &quot;panic button&quot;. This instantly reverts the environment to a minimal, non-triggering baseline rather than completely disconnecting the patient.</li>
+                <li><strong>Avatar Co-presence:</strong> Both patient and therapist exist as avatars within the virtual space, providing the patient with continuous guidance, a sense of safety and presence.</li>
+              </ul>
+              <img src="images/Mockup_Therapist_Controlpanel.png" alt="Mockup of the therapist-facing control panel for adjusting the VR environment during a session." class="exploration-figure lightbox-trigger" title="Click to enlarge &mdash; click again to zoom">
+              <p class="exploration-figure-caption">Therapist-facing control panel for real-time adjustment of the VR environment.</p>
+              <img src="images/Gradual_Increase_In_CityEnvironment.png" alt="Sequential screenshots of the VR city environment demonstrating gradual increases in visual detail and stimulus intensity." class="exploration-figure lightbox-trigger" title="Click to enlarge &mdash; click again to zoom">
+              <p class="exploration-figure-caption">Gradual exposure steps showcasing the 3–4 jumps in detail level within the city environment.</p>
+              <div class="thesis-highlights">
+                <p class="thesis-highlights-label">Design Insight</p>
+                <p>Moving away from strict realism toward symbolic representations of trauma can effectively trigger emotional responses while offering a safer, more flexible therapeutic route. This might be of importance when the patient reacts too strongly to low levels of realistic stimuli.</p>
+                <img src="images/Realism_Symbolism_SafeExposure.png" alt="Diagram showing how symbolic and realistic representations can support a gradual, safer exposure approach in VR therapy." class="exploration-figure lightbox-trigger" title="Click to enlarge &mdash; click again to zoom">
+                <p class="exploration-figure-caption">Realism and symbolism as alternative routes for gradual, safer exposure.</p>
+              </div>
+            </div>
+            <div class="thesis-section">
+              <p class="thesis-highlights-label">Outcome</p>
+              <p>The output is a design direction and proof-of-concept demonstrating how HCI principles and real-time therapist controls can optimize therapeutic outcomes. It provides insight into the balance of realistic and symbolic stimuli in VR exposure, treating symbolic representations as a potential path for gradual, less intense exposure rather than defaulting to full realism. While it highlights the vast potential of user-centered design in mental health, this prototype remains a conceptual tool and not a clinically validated intervention.</p>
+            </div>
+            <div class="thesis-section">
+              <p class="thesis-highlights-label">Limitations &amp; Next Steps</p>
+              <p>User testing with patients was out of scope for this thesis. Future iterations should integrate real-time physiological monitoring (such as heart rate and sweat detection) and an anxiety panel visualizing the SUDS (Subjective Units of Distress) scale to objectively gauge patient reactions. I would also explore deeper tools for object depersonalization and the usage of biometric data in order to reach the &quot;sweet spot&quot; of efficacy and safety.</p>
+            </div>
+              </div>
+            </details>
           </div>
         </article>
 
@@ -76,17 +110,54 @@
           <h3>Increased Quality of Life for Physically Disabled Individuals: Factors to Consider When Developing Welfare Technology</h3>
           <p class="thesis-institution">University of Skövde &mdash; BSc Information Technology — Business Intelligence &mdash; 2022</p>
           <div class="thesis-description">
-            <p>Welfare technology for physically disabled users sits at the intersection of software engineering and human need — but the literature around how to actually develop it is fragmented. This thesis is a systematic literature review that asks which factors should be taken into account when building these products.</p>
-            <p>The review screened 71 articles from Google Scholar and Semantic Scholar against defined inclusion criteria, and analysed the final 15 through qualitative content analysis. Findings were organised into three categories: human factors, technical factors, and critical success factors.</p>
-            <p>The main result was a gap. The literature is rich on critical success factors and technical factors, but notably thin on human factors — which, given that welfare technology exists specifically to serve people whose needs are easily overlooked, is a problem. The consistent thread across all three categories was the importance of involving end users and stakeholders in development from the start.</p>
+            <div class="thesis-section">
+              <p class="thesis-highlights-label">The Problem</p>
+              <p>Welfare technology exists to support physically disabled individuals in maintaining independence and quality of life, yet products frequently fail in practice when they ignore real human capabilities and lived experiences. While digital aids can compensate for physical limitations, standard software development processes struggle to translate complex user needs into technical specifications. Identifying the key factors that drive successful welfare technology development is essential to prevent abandoned devices and ensure technical aids deliver genuine value.</p>
+            </div>
+            <details class="thesis-card-expander">
+              <summary>Read the full thesis</summary>
+              <div class="thesis-expanded-content">
+              <div class="thesis-section">
+              <p class="thesis-highlights-label">My Approach</p>
+              <p>To establish an evidence-based foundation for welfare technology development, I conducted a systematic literature review following Okoli's methodology:</p>
+              <ul class="highlights-list">
+                <li><strong>Database Search:</strong> Queried Google Scholar and Semantic Scholar using targeted keyword combinations across human factors, technical factors, critical success factors, and software development.</li>
+                <li><strong>Screening &amp; Selection:</strong> Screened 71 candidate articles against explicit inclusion criteria&mdash;peer-reviewed status, publication from 2015 onward, full-text availability, and a minimum of 5 citations.</li>
+                <li><strong>Synthesis:</strong> Selected 15 core studies for full analysis.</li>
+                <li><strong>Analysis Method:</strong> Applied qualitative content analysis using a two-stage thematic coding process (condensing raw text into codes, subcategories, and overarching categories).</li>
+              </ul>
+              <img src="images/WelfareTech_ScreeningFunnel.png" alt="Funnel diagram showing the systematic review filtering process from 71 identified articles down to 15 selected core studies." class="exploration-figure lightbox-trigger" title="Click to enlarge &mdash; click again to zoom">
+              <p class="exploration-figure-caption">Systematic review filtering funnel mapping database queries (71 articles) to final synthesis selection (15 core studies).</p>
+            </div>
+            <div class="thesis-section">
+              <p class="thesis-highlights-label">Key Findings</p>
+              <p>The synthesized evidence organized into four distinct categories, highlighting a major imbalance in current research:</p>
+              <ul class="highlights-list">
+                <li><strong>Technical Factors:</strong> Richly documented in literature. Focuses on concrete interface guidelines and system capabilities, including error tolerance, minimalist design, customizable controls, clear feedback, and reduced memory load.</li>
+                <li><strong>Critical Success Factors (CSFs):</strong> Extensively covered from a project management perspective. Key drivers include clear requirements, strong internal communication, leadership support, and structured risk management.</li>
+                <li><strong>The Human Factors:</strong> Research is notably thin on concrete human factors. While literature routinely acknowledges &quot;user needs&quot; at a high level, it lacks detailed data on physical variability, changing conditions over time, and psychosocial impacts on adoption.</li>
+                <li><strong>The Moving Factors Gap:</strong> Factors that are identified, examined and are attempted to be mitigated via the product. However, the needs over the user might change over time due to age or worsening conditions. Key takeaway is to provide room for adjustment to offer a wider range of assistance options.</li>
+                <li><strong>The Unifying Thread:</strong> Early and continuous end-user involvement across the entire development lifecycle emerged as the single most critical factor across all three categories to bridge this gap.</li>
+              </ul>
+              <img src="images/Development_EndUsers_Factors.png" alt="Matrix diagram categorizing technical factors, critical success factors, and the highlighted human factors research gap." class="exploration-figure lightbox-trigger" title="Click to enlarge &mdash; click again to zoom">
+              <p class="exploration-figure-caption">Conceptual interaction model mapping end-user needs, technical capabilities, and project success factors into the software development process.</p>
+            </div>
           </div>
           <div class="thesis-highlights">
-            <p class="thesis-highlights-label">What the thesis did</p>
-            <ul class="highlights-list">
-              <li>Systematic literature review across human, technical, and critical success factor literatures</li>
-              <li>Identified a gap in human-factor research within welfare technology development</li>
-              <li>Synthesised end-user and stakeholder involvement as a cross-cutting requirement</li>
-            </ul>
+            <div class="thesis-section thesis-card-followup">
+              <p class="thesis-highlights-label">Why It Matters / Implications for Practice</p>
+              <p>This synthesis highlights a major blind spot in welfare technology: software teams are given abundant UI heuristics and project management frameworks, but lack structured human-factor frameworks tailored to physical disabilities. While this review synthesizes existing literature rather than original empirical data, identifying this blind spot provides actionable value for HCI/UX practitioners. It proves that technical usability alone cannot drive adoption&mdash;development teams must build flexible requirement-gathering processes that adapt to shifting user capabilities over time.</p>
+            </div>
+            <div class="thesis-section">
+              <p class="thesis-highlights-label">Limitations &amp; Next Steps</p>
+              <ul class="highlights-list">
+                <li><strong>Limitations:</strong> The findings reflect published academic literature up to 2022 rather than direct field observations or primary user testing.</li>
+                <li><strong>Next Steps:</strong> Validate these factor categories through qualitative interviews with accessibility software teams and perform participatory design sessions directly with physically disabled end-users.</li>
+              </ul>
+            </div>
+          </div>
+              </div>
+            </details>
           </div>
         </article>
 
