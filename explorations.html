@@ -45,11 +45,16 @@
               <span class="status-dot"></span>
               Ongoing
             </span>
-            <h3>Rewirement Counter (Ongoing)</h3>
-            <p class="card-body">A lightweight exploration in progress: mapping requirements by priority to clarify what matters most before building the prototype.</p>
-            <p><b>Below are three illustrative examples showing how the requirement framing could be organised.</b></p>
+            <p class="card-meta"><strong>Product Design · Wearable Tech · Behavior Change</strong> <span>(Personal Project — Ongoing)</span></p>
+            <h3>Rewirement Counter</h3>
+            <p class="card-body">Physical prototype in development — hardware selected, requirements specified</p>
+            <div class="exploration-notes">
+              <h4>The Problem</h4>
+              <p>Resisting an urge is invisible work. The moment someone chooses not to act on a craving, an intrusive thought, or any other pattern they're trying to break, that moment of resistance leaves no trace. There's nothing to point to afterward as evidence that willpower was exercised, which makes it hard to notice progress or stay motivated when change feels slow. This is compounded by how these patterns quietly shape a person's state without them always connecting the two — nicotine withdrawal, for example, can affect mood and cognition in ways that go unrecognized as withdrawal. Without something that makes both the resistance and its effects tangible, people are often left relying on memory and hope rather than evidence that they're actually getting better at this.</p>
+              <p><strong>Read the full description</strong></p>
+            </div>
             <button class="exploration-toggle" aria-expanded="false">
-              Show the project
+              Read the full description
               <span class="exploration-chevron" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="6 9 12 15 18 9"/>
@@ -60,31 +65,29 @@
               <div class="exploration-body-inner">
                 <div class="exploration-body-content">
                   <div class="exploration-notes">
-                    <h4>What it's for</h4>
-                    <p>Placeholder text describing how the project frames user needs and system requirements into a clear priority structure. This section is intentionally brief while the concept is still in progress.</p>
-                    <p>Requirements can be grouped according to urgency, desirability, and technical feasibility so the prototype remains focused on the highest-value decisions first.</p>
+                    <h4>My Approach</h4>
+                    <p>To move from a rough product idea to something buildable, I ran the concept through a structured requirements process:</p>
+                    <ul>
+                      <li><strong>Problem framing:</strong> Isolated the core pain point — that resisting an urge produces no lasting feedback, and that the underlying pattern can distort a person's state without them noticing (see attached diagram).</li>
+                      <li><strong>Literature grounding:</strong> Reviewed behavioral science on self-monitoring reactivity, ecological momentary assessment (including studies that used a physical "temptation" button press to log craving in real time), habit reversal training's awareness-training step, and affect labeling, to check whether a button-press logging mechanic has real evidential grounding before committing to hardware.</li>
+                      <li><strong>MoSCoW prioritization:</strong> Mapped every candidate feature — physical button, digital counter, gamification, multi-pattern tracking, smartwatch integration, social sharing, verbal affirmation — against Must/Should/Could/Won't Have, to separate what the core device needs from what belongs in a later iteration or companion app.</li>
+                      <li><strong>Component specification:</strong> Translated the Must and Should Have features into a formal requirements table using a Physical/Digital–Component–Function–ID system, then matched each function to specific hardware: an Adafruit Feather nRF52840 Express as the microcontroller, a 128×64 OLED FeatherWing for on-device feedback, an Adalogger FeatherWing (RTC + microSD) for timestamped logging, and a panel-mount momentary pushbutton as the primary input.</li>
+                    </ul>
 
-                    <h4>Why it matters</h4>
-                    <p>Placeholder text explaining that requirement capture can help turn early ideas into a clearer decision pathway. By isolating must-haves, should-haves, and later-stage features, the direction of the project becomes easier to communicate and evaluate.</p>
-                    <p>At this stage the focus is on clarity rather than finality: the goal is to build a map of the problem space before committing to a single technical route.</p>
+                    <div class="exploration-image-placeholder">
+                      <img src="images/Rewirement_MoSCow.png" alt="MoSCoW breakdown of the Rewirement Counter feature set" class="lightbox-trigger" title="Click to enlarge — click again to zoom">
+                      <p>MoSCoW breakdown of the Rewirement Counter's feature set, from core interaction to future extensions.</p>
+                    </div>
 
-                    <h4>Process</h4>
-                    <p>Placeholder text describing the use of a prioritisation framework to sort collected requirements. The aim is to separate immediate constraints from optional expansions and to keep a record of what has been deliberately deferred.</p>
-                    <p>Illustrative examples below show how a MoSCoW-style view and technical breakdown can work together to support prototype planning.</p>
-                  </div>
-                  <div class="exploration-image-placeholders">
-                    <div class="exploration-image-placeholder">
-                      <img src="images/Rewirement_MoSCow.png" alt="MoSCoW requirement prioritisation diagram" class="lightbox-trigger" title="Click to enlarge — click again to zoom">
-                      <p>Requirements mapped by priority.</p>
-                    </div>
-                    <div class="exploration-image-placeholder">
-                      <img src="images/Rewirement_Specifications1.png" alt="Requirements gathered from MoSCoW diagram" class="lightbox-trigger" title="Click to enlarge — click again to zoom">
-                      <p>Requirements gathered from MoSCoW diagram.</p>
-                    </div>
-                    <div class="exploration-image-placeholder">
-                      <img src="images/Rewirement_Specifications2.png" alt="Example technical components needed for the prototype" class="lightbox-trigger" title="Click to enlarge — click again to zoom">
-                      <p>Example of technical components needed for the prototype.</p>
-                    </div>
+                    <h4>Key Findings</h4>
+                    <p>Working through prioritization and specification surfaced a few design decisions worth calling out:</p>
+                    <ul>
+                      <li><strong>The physical input had to stay physical.</strong> The button press was never in question as a Must Have — literature on self-monitoring reactivity and momentary urge logging (including EMA studies that used a physical "temptation/lapse" button in smoking-cessation research) suggests it's the deliberate physical act of logging, not just the resulting data, that appears to influence the behavior. An always-available in-app toggle would lose that deliberateness.</li>
+                      <li><strong>Feedback needed two channels, not one.</strong> The OLED's instant digital response covers the Must Have need for visible reinforcement, but a non-digital visual reminder of the user's underlying state (e.g. withdrawal stage) was kept as an equally weighted Must Have — it doesn't depend on the user opening a screen to notice their state has shifted.</li>
+                      <li><strong>Staying generic came first, multi-pattern support came second.</strong> The long-press function to switch between tracked patterns (P-B-2) was pushed to Should Have rather than Must Have. The single-pattern counter loop — notice urge, press button, see the count — needed to prove itself before the device took on tracking multiple habits at once.</li>
+                      <li><strong>History is a layer, not the foundation.</strong> Timestamped logging to microSD, which enables trend visualization over time, landed in Should Have rather than Must Have. The tangible, in-the-moment feedback loop is the core mechanic; pattern analysis over time is the next layer built on top of it.</li>
+                      <li><strong>Reinforcement extras were deliberately deprioritized.</strong> Verbal affirmation on press, gamified milestones, social leaderboards, and smartwatch integration were placed in Could/Won't Have — they add reinforcement value but aren't required for the core mechanic to function.</li>
+                    </ul>
                   </div>
                 </div>
               </div>
