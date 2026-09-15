@@ -1166,8 +1166,16 @@ main {
   margin-bottom: var(--space-md);
 }
 
-.olfactory-compass-card {
+#rewirement-counter {
+  order: -2;
+}
+
+#sisu-compass {
   order: -1;
+}
+
+#animal-computer-interaction {
+  order: 0;
 }
 
 .exploration-card.card-tinted {
