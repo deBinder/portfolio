@@ -45,13 +45,11 @@
               <span class="status-dot"></span>
               Ongoing
             </span>
-            <p class="card-meta"><strong>Product Design · Wearable Tech · Behavior Change</strong> <span>(Personal Project — Ongoing)</span></p>
+            <p class="card-meta"><strong>Product Design · Wearable Tech</strong> <span>(Ongoing)</span></p>
             <h3>Rewirement Counter</h3>
-            <p class="card-body">Physical prototype in development — hardware selected, requirements specified</p>
             <div class="exploration-notes">
               <h4>The Problem</h4>
-              <p>Resisting an urge is invisible work. The moment someone chooses not to act on a craving, an intrusive thought, or any other pattern they're trying to break, that moment of resistance leaves no trace. There's nothing to point to afterward as evidence that willpower was exercised, which makes it hard to notice progress or stay motivated when change feels slow. This is compounded by how these patterns quietly shape a person's state without them always connecting the two — nicotine withdrawal, for example, can affect mood and cognition in ways that go unrecognized as withdrawal. Without something that makes both the resistance and its effects tangible, people are often left relying on memory and hope rather than evidence that they're actually getting better at this.</p>
-              <p><strong>Read the full description</strong></p>
+              <p>Resisting an urge doesn't leave a trace. The moment you don't act on a craving or an intrusive thought, there's nothing to show for it afterward — no evidence, so it's easy to lose track of whether you're actually getting better at this or just hoping you are. It's made worse by how these patterns can affect your state without you noticing — nicotine withdrawal being the clearest example.</p>
             </div>
             <button class="exploration-toggle" aria-expanded="false">
               Read the full description
@@ -66,27 +64,18 @@
                 <div class="exploration-body-content">
                   <div class="exploration-notes">
                     <h4>My Approach</h4>
-                    <p>To move from a rough product idea to something buildable, I ran the concept through a structured requirements process:</p>
-                    <ul>
-                      <li><strong>Problem framing:</strong> Isolated the core pain point — that resisting an urge produces no lasting feedback, and that the underlying pattern can distort a person's state without them noticing (see attached diagram).</li>
-                      <li><strong>Literature grounding:</strong> Reviewed behavioral science on self-monitoring reactivity, ecological momentary assessment (including studies that used a physical "temptation" button press to log craving in real time), habit reversal training's awareness-training step, and affect labeling, to check whether a button-press logging mechanic has real evidential grounding before committing to hardware.</li>
-                      <li><strong>MoSCoW prioritization:</strong> Mapped every candidate feature — physical button, digital counter, gamification, multi-pattern tracking, smartwatch integration, social sharing, verbal affirmation — against Must/Should/Could/Won't Have, to separate what the core device needs from what belongs in a later iteration or companion app.</li>
-                      <li><strong>Component specification:</strong> Translated the Must and Should Have features into a formal requirements table using a Physical/Digital–Component–Function–ID system, then matched each function to specific hardware: an Adafruit Feather nRF52840 Express as the microcontroller, a 128×64 OLED FeatherWing for on-device feedback, an Adalogger FeatherWing (RTC + microSD) for timestamped logging, and a panel-mount momentary pushbutton as the primary input.</li>
-                    </ul>
+                    <p>I ran the concept through a MoSCoW exercise to separate what the device actually needs from what would just be nice to have. From there I turned the Must and Should Have items into a component spec, pairing each function with an ID and matching hardware — mostly built around Adafruit's Feather ecosystem (nRF52840 microcontroller, OLED display, RTC + SD logging, and a panel-mount pushbutton as the main input).</p>
 
                     <div class="exploration-image-placeholder">
                       <img src="images/Rewirement_MoSCow.png" alt="MoSCoW breakdown of the Rewirement Counter feature set" class="lightbox-trigger" title="Click to enlarge — click again to zoom">
                       <p>MoSCoW breakdown of the Rewirement Counter's feature set, from core interaction to future extensions.</p>
                     </div>
 
-                    <h4>Key Findings</h4>
-                    <p>Working through prioritization and specification surfaced a few design decisions worth calling out:</p>
+                    <h4>Key Decisions So Far</h4>
                     <ul>
-                      <li><strong>The physical input had to stay physical.</strong> The button press was never in question as a Must Have — literature on self-monitoring reactivity and momentary urge logging (including EMA studies that used a physical "temptation/lapse" button in smoking-cessation research) suggests it's the deliberate physical act of logging, not just the resulting data, that appears to influence the behavior. An always-available in-app toggle would lose that deliberateness.</li>
-                      <li><strong>Feedback needed two channels, not one.</strong> The OLED's instant digital response covers the Must Have need for visible reinforcement, but a non-digital visual reminder of the user's underlying state (e.g. withdrawal stage) was kept as an equally weighted Must Have — it doesn't depend on the user opening a screen to notice their state has shifted.</li>
-                      <li><strong>Staying generic came first, multi-pattern support came second.</strong> The long-press function to switch between tracked patterns (P-B-2) was pushed to Should Have rather than Must Have. The single-pattern counter loop — notice urge, press button, see the count — needed to prove itself before the device took on tracking multiple habits at once.</li>
-                      <li><strong>History is a layer, not the foundation.</strong> Timestamped logging to microSD, which enables trend visualization over time, landed in Should Have rather than Must Have. The tangible, in-the-moment feedback loop is the core mechanic; pattern analysis over time is the next layer built on top of it.</li>
-                      <li><strong>Reinforcement extras were deliberately deprioritized.</strong> Verbal affirmation on press, gamified milestones, social leaderboards, and smartwatch integration were placed in Could/Won't Have — they add reinforcement value but aren't required for the core mechanic to function.</li>
+                      <li><strong>The button press stayed a hard Must Have</strong> — it needs to be a deliberate physical action, not something buried in an app, for "notice the urge, press the button, see it" to actually mean anything.</li>
+                      <li><strong>A non-digital visual reminder sits alongside the digital counter as equally important</strong>, so the device doesn't depend on someone looking at a screen to register that their state has shifted.</li>
+                      <li><strong>Multi-pattern tracking and historical logging both got pushed to Should Have</strong> — the single button, single pattern loop needs to prove itself before the device takes on more.</li>
                     </ul>
                   </div>
                 </div>
